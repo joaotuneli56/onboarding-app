@@ -1,0 +1,29 @@
+<div class="container login-container mt-5 d-flex justify-content-center align-items-center">
+  <div class="card shadow" style="width: 600px;">
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <img src="assets/img/login-image.jpg" class="img-fluid" alt="Imagem de Login">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Login</h2>
+          <form (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" [(ngModel)]="senha" name="senha" id="senha" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block m-2">Entrar</button>
+            <div *ngIf="loginFailed" class="alert alert-danger mt-3">
+              Login falhou. Tente novamente.
+            </div>
+            <button (click)="goToRegister()" class="btn btn-secondary btn-block m-2">Cadastrar-se</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
